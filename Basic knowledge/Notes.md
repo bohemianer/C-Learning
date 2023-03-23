@@ -1,0 +1,26 @@
+# 编译器、函数、存储类
+## 编译器
+### MinGW
+MinGW，是Minimalist GNU for Windows的缩写。它是一个可自由使用和自由发布的Windows特定头文件和使用GNU工具集导入库的集合，允许你在GNU/Linux和Windows平台生成本地的Windows程序而不需要第三方C运行时（C Runtime）库。  
+
+## 函数
+
+### 定义
+
+```c
+void learn(void) 
+```
+
+- 第一个void为函数类型，void表示没有返回值
+- 第二void（括号内）表示该函数不带参数
+
+
+
+## 存储类
+
+### extern 存储类
+
+extern 修饰符通常用于当有两个或多个文件共享相同的全局变量或函数的时候
+
+
+
