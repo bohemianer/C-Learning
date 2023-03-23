@@ -6,5 +6,5 @@ int main()
     p = &var_runoob;
     printf("var_runoob = %p", p);
     return 0;
-    
+
 }
