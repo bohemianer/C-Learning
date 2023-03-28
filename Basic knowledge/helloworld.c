@@ -1,30 +1,32 @@
 #include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
 
-typedef struct
-{
-    char name[20];
-    int age;
-    int score;
-}student;
+// 写一个可以新建文件的程序，要求文件名由用户输入
+int creat_file();
 
-student *create_student(char *name, int age, int score)
-{
-    student *p = (student *)malloc(sizeof(student));
-    strcpy(p->name, name);
-    p->age = age;
-    p->score = score;
-    return p;
-};
 
 int main()
 {
-    student *s1;
-    s1 = create_student("Tom", 20, 90);
-    // 对 s1 所指向的结构体对象的成员进行操作，例如：
-    printf("Name: %s, Age: %d, Score: %d\n", s1->name, s1->age, s1->score);
-    // 记得在程序结束前释放动态分配的内存空间
-    free(s1);
+    creat_file();
     return 0;
 }
+
+
+int creat_file()
+{
+    char filename[100];
+    printf("Please input the filename: ");
+    scanf("%s", filename);
+    FILE *fp = fopen(filename, "w");
+    if (fp == NULL)
+    {
+        printf("Can't create file %s, please check the path and filename.\r", filename);
+    }
+    else
+    {
+        printf("File %s created successfully\n", filename);
+        // fprintf(fp, "This is a new file created by C language!");
+    }
+    fclose(fp);
+    return 0;
+}
+
