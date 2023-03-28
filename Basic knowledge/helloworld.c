@@ -1,32 +1,37 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
-// 写一个可以新建文件的程序，要求文件名由用户输入
-int creat_file();
+#include "file.h"  // 引入头文件
+#include "student_info.h"  // 引入头文件
+
 
 
 int main()
 {
-    creat_file();
-    return 0;
-}
 
+    char content[100];
 
-int creat_file()
-{
-    char filename[100];
-    printf("Please input the filename: ");
-    scanf("%s", filename);
-    FILE *fp = fopen(filename, "w");
-    if (fp == NULL)
-    {
-        printf("Can't create file %s, please check the path and filename.\r", filename);
+    //写一个可以读取输入三个学生信息的程序，分别存入结构体数组中，然后输出到屏幕上
+    student *students[3];
+    for (int i = 0; i < 3; i++) {
+        char name[20];
+        int age;
+        int score;
+        printf("请输入第%d个学生的姓名，年龄，成绩：", i + 1);
+        scanf("%s %d %d", name, &age, &score);
+        students[i] = create_student(name, age, score);
     }
-    else
-    {
-        printf("File %s created successfully\n", filename);
-        // fprintf(fp, "This is a new file created by C language!");
-    }
-    fclose(fp);
-    return 0;
-}
 
+    creat_file("student_info.txt");
+
+    for (int i = 0; i < 3; i++) {
+        sprintf(content, "%s %d %d\n", students[i]->name, students[i]->age, students[i]->score);
+        append_file("student_info.txt", content);
+        printf("学生信息：%s %d %d\n", students[i]->name, students[i]->age, students[i]->score);
+    }
+
+   fclose("student_info.txt");
+
+
+}
