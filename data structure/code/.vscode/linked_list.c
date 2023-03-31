@@ -110,34 +110,37 @@ void print_node(struct node *head)
     }
 }
 
-int main()
-{
-    struct node *head = NULL; // pointer to the first node
-    struct node *second = NULL;
-    struct node *third = NULL;
 
-    head = (struct node *)malloc(sizeof(struct node)); // allocate 3 nodes in the heap
-    second = (struct node *)malloc(sizeof(struct node));
-    third = (struct node *)malloc(sizeof(struct node));
 
-    head->data = 1; // assign data in first node
-    head->next = second;
 
-    second->data = 2;
-    second->next = third;
+// int main()
+// {
+//     struct node *head = NULL; // pointer to the first node
+//     struct node *second = NULL;
+//     struct node *third = NULL;
 
-    third->data = 3;
-    third->next = NULL;
+//     head = (struct node *)malloc(sizeof(struct node)); // allocate 3 nodes in the heap
+//     second = (struct node *)malloc(sizeof(struct node));
+//     third = (struct node *)malloc(sizeof(struct node));
 
-   // insert a node at the end of the linked list
-    endinsert_node(head, 4);
-    endinsert_node(head, 5);
-    research_node(head, 5);
-    print_node(head);
-    delete_node(head, 2);
-    print_node(head);
-   // print_node(head);                  cx
-    release(head);
+//     head->data = 1; // assign data in first node
+//     head->next = second;
 
-    return 0;
-}
+//     second->data = 2;
+//     second->next = third;
+
+//     third->data = 3;
+//     third->next = NULL;
+
+//    // insert a node at the end of the linked list
+//     endinsert_node(head, 4);
+//     endinsert_node(head, 5);
+//     research_node(head, 5);
+//     print_node(head);
+//     delete_node(head, 2);
+//     print_node(head);
+//    // print_node(head);                  cx
+//     release(head);
+
+//     return 0;
+// }
