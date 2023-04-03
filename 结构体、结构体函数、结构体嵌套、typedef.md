@@ -88,6 +88,62 @@ int main()
 
 
 
+## 结构体函数
+
+在 C 语言中，没有类的概念，因此也不存在类的成员函数。但是可以在结构体中定义函数，这种函数称为结构体函数。结构体函数和普通函数的定义方式相同，只是在结构体内部定义。
+
+```c
+#include <stdio.h>
+
+struct student {
+  char name[50];
+  int age;
+  float gpa;
+
+  // 结构体函数
+  void display() {
+    printf("Name: %s\n", name);
+    printf("Age: %d\n", age);
+    printf("GPA: %f\n", gpa);
+  }
+};
+
+int main() {
+  struct student s = {"Alice", 20, 3.5};
+  s.display();
+  return 0;
+}
+
+
+```
+
+
+
+## 结构体嵌套
+
+```c
+typedef struct node  //define a node structure
+{
+  int data;
+  struct node *next;
+} node;
+
+
+typedef struct Stack  //define a stack structure
+{
+  node* head;  //head pointer  node* represents a pointer to a node structure
+  int size;   //stack size
+} Stack;
+```
+
+在这段代码中，struct node 是一个自定义的结构体类型，表示链表中的节点。每个节点包含两个成员变量: data表示节点存储的数据，next 是一个指向下一个节点的指针。因此，next 成员变量的类型是 struct node*，即指向 struct node 类型的指针。*
+
+*在定义链表时，我们需要使用 struct node 类型来表示每个节点。因此next 成员变量的类型也需要是 struct node*，用来指向下一个节点。这样我们就可以通过 node->next 来访问链表中的下一个节点
+
+需要注意的是，这里使用了嵌套的结构体定义，即在 struct node 内部定义了一个 struct node* 类型的成员变量。这种嵌套的结构体定义可以方便地表示复杂的数据结构，如链表、树等
+
+
+
 # typedef
 
 使用 typedef 可以将 `struct student` 定义为一个新的类型名，从而可以使程序更加简洁易读。以下是使用 typedef 重写该程序的示例：

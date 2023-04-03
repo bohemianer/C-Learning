@@ -67,17 +67,18 @@ void GetTop(SeqStack *s, int *x) //取栈顶元素
 }
 
 
-int main()
-{
-    SeqStack s;
-    int x;
-    InitStack(&s);
-    push(&s, 1);
-    push(&s, 2);
-    push(&s, 3);
-    push(&s, 4);
-  //  printf("Top is :%d\n",s.data[s.top]);
-    GetTop(&s, &x);
 
-    return 0;
-}
+// int main()
+// {
+//     SeqStack s;
+//     int x;
+//     InitStack(&s);
+//     push(&s, 1);
+//     push(&s, 2);
+//     push(&s, 3);
+//     push(&s, 4);
+//   //  printf("Top is :%d\n",s.data[s.top]);
+//     GetTop(&s, &x);
+
+//     return 0;
+// }
