@@ -68,10 +68,10 @@ void singleBrute_match(char* char1,char* char2)
 
 // }
 
-int main()
-{
-    char char1[] = "Hello World";
-    char char2[] = "World";
-    singleBrute_match(char1,char2);
+// int main()
+// {
+//     char char1[] = "Hello World";
+//     char char2[] = "World";
+//     singleBrute_match(char1,char2);
 
-}
+// }
